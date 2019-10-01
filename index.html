@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>New Project</title>
+    <!-- magic meta tag -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- stylesheets -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+    <link href="css/qs.min.css" rel="stylesheet"/>
+
+    <!-- jquery -->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- jquery older versions
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+-->
+
+<!-- scripts
+<script type="text/javascript" src="js/" ></script>
+-->
+
+<!-- dont forget IE :( -->
+<!--[if lte IE 7]> <link rel="stylesheet" href="css/ie.css" /> <![endif]-->
+<!--[if lt IE 9]>  <script src="js/html5shiv.js"></script>     <![endif]-->
+
+</head>
+<style>
+.box,
+.box-first,
+.box-large,
+.box-nested,
+.box-row {
+    position:relative;
+    box-sizing:border-box;
+    min-height:1rem;
+    margin-bottom:0;
+    background:#007FFF;
+    border:1px solid #FFF;
+    border-radius:2px;
+    overflow:hidden;
+    text-align:center;
+    color:#fff
+}
+.box-row {
+    margin-bottom:1rem
+}
+.box-first {
+    background:#06C;
+    border-color:#007FFF
+}
+.box-nested {
+    background:#036;
+    border-color:#007FFF
+}
+.box-large {
+    height:8rem
+}
+.box-container {
+    box-sizing:border-box;
+    padding:.5rem
+}
+.page-footer {
+    box-sizing:border-box;
+    padding-bottom:3rem
+}
+.tag {
+    color:#000;
+    font-weight:400
+}
+.end {
+    text-align:end
+}
+</style>
+<body>
+    <!-- contents -->
+    <div class="grid">
+        <div class="row">
+            <div class="col-1"><div class="box-row">1</div></div>
+            <div class="col-2"><div class="box-row">1</div></div>
+            <div class="col-3"><div class="box-row">1</div></div>
+            <div class="col-6"><div class="box-row">1</div></div>
+        </div>
+        <div class="row">
+            <div class="col-xs"><div class="box-row">xs</div></div>
+            <div class="col-xs"><div class="box-row">xs</div></div>
+            <div class="col-sm"><div class="box-row">sm</div></div>
+            <div class="col-sm"><div class="box-row">sm</div></div>
+        </div>
+        <div class="row">
+            <div class="col-md"><div class="box-row">md</div></div>
+            <div class="col-lg"><div class="box-row">lg</div></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-sm-10 col-md-6 col-lg-4">
+            <div class="box">Responsive</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="box-row">
+                    coso
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

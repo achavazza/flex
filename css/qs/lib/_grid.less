@@ -1,0 +1,169 @@
+// main: ../qs.less
+
+// #Mobile xs
+
+.grid {
+    //width: @layout-sm;
+    margin-left: @gutter * 2;
+    margin-right: @gutter * 2;
+}
+
+.col-xs,
+.col-sm,
+.col-md,
+.col-lg{
+    flex-basis: 100%;
+}
+//.__generateSetup(colcentered);
+//.__generateSetup(pushpull);
+//.__generateGrid(12);
+//.__generateGridResponsive(12, xs);
+//.__generateRes     (12,1, xs);
+.__generateDef (12);
+.__generateDisplay (xs);
+.__tools(xs);
+
+
+.row {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left:  -@gutter;
+    margin-right: -@gutter;
+}
+.row.reverse {
+    flex-direction: row-reverse;
+}
+.col.reverse {
+    flex-direction: column-reverse;
+}
+
+.visible-only-sm    ,
+.visible-only-md    ,
+.visible-only-lg    ,
+.invisible-only     { display: none !important;  }
+
+.invisible-only-sm  ,
+.invisible-only-md  ,
+.invisible-only-lg  ,
+.visible-only       { display: block !important;  }
+
+.visible-sm         ,
+.visible-md         ,
+.visible-lg         ,
+.invisible          { display: none !important;  }
+
+.visible            { display: block !important; }
+
+.responsive-sm() when (isnumber(@screen-sm)){
+    @media screen and (min-width: @screen-sm){
+
+        .grid {
+            width: @layout-sm;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        //.__generateGridResponsive(12, sm);
+        .__generateDisplay (sm);
+        .__generateRes     (12,1, sm);
+        .__tools(sm);
+
+        // #Portrait Visible / Invisible - switch on off elements
+        // ======================================================================================================
+        .visible-only       ,
+        .visible-only-md    ,
+        .visible-only-lg    ,
+        .invisible-only-sm  { display: none !important;  }
+
+        .invisible-only     ,
+        .invisible-only-md  ,
+        .invisible-only-lg  ,
+        .visible-only-sm    { display: block !important; }
+
+        .visible-md         ,
+        .visible-lg         ,
+        .invisible          ,
+        .invisible-sm       { display: none !important;  }
+
+        .visible            ,
+        .visible-sm         { display: block !important; }
+    }
+}
+
+.responsive-sm();
+.responsive-md() when (isnumber(@screen-md)){
+    @media screen and (min-width: @screen-md){
+
+        .grid {
+            width: @layout-md;
+        }
+
+        // #Landscape Mutate - change and adapt cols
+        // ======================================================================================================
+
+        //.__generateGridResponsive(12, md);
+        .__generateDisplay (md);
+        .__generateRes     (12,1, md);
+        .__tools(md);
+
+        // #Landscape Visible / Invisible - switch on off elements
+        // ======================================================================================================
+
+        .visible-only        ,
+        .visible-only-sm     ,
+        .visible-only-lg     ,
+        .invisible-only-md   { display: none !important;  }
+
+        .invisible-only      ,
+        .invisible-only-sm   ,
+        .invisible-only-lg   ,
+        .visible-only-md     { display: block !important; }
+
+        .visible-lg     ,
+        .invisible      ,
+        .invisible-sm   ,
+        .invisible-md   { display: none !important;  }
+
+        .visible        ,
+        .visible-sm     ,
+        .visible-md     { display: block !important; }
+
+    }
+}
+.responsive-md();
+.responsive-lg() when (isnumber(@screen-lg)){
+    @media screen and (min-width: @screen-lg) {
+
+        .grid{ width: @layout-lg; }
+
+        //.__generateGridResponsive(12, lg);
+        .__generateDisplay (lg);
+        .__generateRes     (12,1, lg);
+        .__tools(lg);
+
+        // #Desktop Visible / Invisible - switch on off elements
+        // ======================================================================================================
+        .visible-only        ,
+        .visible-only-sm     ,
+        .visible-only-md     ,
+        .invisible-only-lg   { display: none !important;  }
+
+        .invisible-only      ,
+        .invisible-only-sm   ,
+        .invisible-only-md   ,
+        .visible-only-lg     { display: block !important; }
+
+        .invisible      ,
+        .invisible-sm   ,
+        .invisible-md   ,
+        .invisible-lg   { display: none !important;  }
+
+        .visible        ,
+        .visible-sm     ,
+        .visible-md     ,
+        .visible-lg     { display: block !important; }
+    }
+}
+.responsive-lg();
