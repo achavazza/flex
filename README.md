@@ -1,7 +1,7 @@
-[Quickstarter](http://achavazza.github.io/qs-docs/)
+[Flex](http://achavazza.github.io/qs-docs/)
 =============
 
-Quickstarter is a LESS framework to help you build your next HTML5 project.
+Flex is another CSS framework (LESS BASED) to help you build your next HTML5 project.
 It's a Lightweight, Mobile-first, Style-agnostic & Responsive Grid System.
 
 Check it out [See full docs](http://achavazza.github.io/qs-docs/)
@@ -103,4 +103,4 @@ Follow me at, [@basarium](http://twitter.com/basarium), keep up to date on annou
 + http://github.com/achavazza
 
 ## Copyright and license
-Quickstarter is free, libre and public domain see more on [http://unlicense.org/](http://unlicense.org/)
+Flex is free, libre and public domain see more on [http://unlicense.org/](http://unlicense.org/)
