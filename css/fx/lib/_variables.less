@@ -1,4 +1,4 @@
-// main: ../qs.less
+// main: ../fx.less
 
 // Table of Contents
 // ======================================================================================================
@@ -23,11 +23,11 @@
 
 // Type
 // --------------------------------
-@baseFontFamily: "Open Sans","Segoe UI", Segoe, Candara, Frutiger, "Frutiger Linotype", Helvetica, Arial, sans-serif;
+@baseFontFamily: "Open Sans", Helvetica, Arial, sans-serif;
 @altFontFamily : /*"Montserrat",*/ @baseFontFamily;
 
 @lineHeight    : 1.5;
-@baseFontSize  : 14px;
+@baseFontSize  : 16px;
 
 @h1FontSize    : 24px ;
 @h2FontSize    : 22px ;
@@ -54,14 +54,17 @@
 // #Global Element variables
 // ================================
 
-@elemWidth   : 9em;       // 1
-@elemSpan    : 1em;       // 2
-@elemPadding : .5em;      // 3
-@elemSpacing : .5em;      // 4
-@elemIndent  : 1em;       // 5
-@elemBlock   : 0.5em 1em; // 6
-@elemBorder  : 1px;       //
-@elemRadius  : 3px;       //
+@elemWidth    : 9em;       // 1
+@elemSpan     : 1em;       // 2
+@elemPadding  : .5em;      // 3
+@elemPaddingY : .5em;      // 3
+@elemPaddingX : .5em;      // 3
+@elemSpacing  : .5em;      // 4
+//@elemSpacing  : .5em;      // 4
+@elemIndent   : 1em;       // 5
+@elemBlock    : .5em 1em; // 6
+@elemBorder   : 1px;       //
+@elemRadius   : 2px;       //
 
 
 
@@ -108,12 +111,12 @@
 // - #Forms
 // --------------------------------
 
-@labelWidth      : @elemWidth;
-@labelSpan       : @elemSpan;
-@inputPadding    : @elemPadding;
-@inputSpacing    : @elemSpacing;
-@inputBorder     : @elemBorder;
-@inputRadius     : @elemRadius;
+//@labelWidth      : @elemWidth;
+//@labelSpan       : @elemSpan;
+//@inputPadding    : @elemPadding;
+//@inputSpacing    : @elemSpacing;
+//@inputBorder     : @elemBorder;
+//@inputRadius     : @elemRadius;
 
 
 
@@ -143,8 +146,7 @@
 
 // - #Layout
 // ================================
-@gutter  : 10px;
-@debug   : false;
+@gutter  : .5em;
 
 //grids separated by comma
 //@grids   : "triad:3", "quad:4";
@@ -155,15 +157,29 @@
 // - #Responsive
 // --------------------------------
 
+@screen-xs : 30em;
+@screen-sm : 45em;
+@screen-md : 60em;
+@screen-lg : 72em;
+
+@layout-xs : auto;
+@layout-sm : 48em;
+@layout-md : 64em;
+@layout-lg : 75em;
+/*
 @screen-xs : 480px;
 @screen-sm : 768px;
 @screen-md : 1024px;
 @screen-lg : 1200px;
 
-@layout-xs : 100%;
-@layout-sm : 700px;
-@layout-md : 940px;
-@layout-lg : 1180px;
+@layout-xs : auto;
+@layout-sm : 720px;
+@layout-md : 960px;
+@layout-lg : 1140px;
+*/
+//@layout-sm : 700px;
+//@layout-md : 940px;
+//@layout-lg : 1180px;
 
 
 

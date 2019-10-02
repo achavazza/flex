@@ -1,9 +1,9 @@
-// main: ../qs.less
+// main: ../fx.less
 
 // #Mobile xs
 
 .grid {
-    //width: @layout-sm;
+    max-width: @layout-xs;
     margin-left: @gutter * 2;
     margin-right: @gutter * 2;
 }
@@ -19,6 +19,7 @@
 //.__generateGrid(12);
 //.__generateGridResponsive(12, xs);
 //.__generateRes     (12,1, xs);
+.__generateSetup(setup);
 .__generateDef (12);
 .__generateDisplay (xs);
 .__tools(xs);
@@ -61,7 +62,7 @@
     @media screen and (min-width: @screen-sm){
 
         .grid {
-            width: @layout-sm;
+            max-width: @layout-sm;
             margin-left: auto;
             margin-right: auto;
         }
@@ -97,7 +98,7 @@
     @media screen and (min-width: @screen-md){
 
         .grid {
-            width: @layout-md;
+            max-width: @layout-md;
         }
 
         // #Landscape Mutate - change and adapt cols
@@ -136,7 +137,7 @@
 .responsive-lg() when (isnumber(@screen-lg)){
     @media screen and (min-width: @screen-lg) {
 
-        .grid{ width: @layout-lg; }
+        .grid{ max-width: @layout-lg; }
 
         //.__generateGridResponsive(12, lg);
         .__generateDisplay (lg);

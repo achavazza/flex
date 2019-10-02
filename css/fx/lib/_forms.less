@@ -1,57 +1,88 @@
-// main: ../qs.less
+// main: ../fx.less
 
-// Table of Contents
-// ======================================================================================================
-// #Default          - mobile and up
-// #Init             - small devices and up
-// #Form-horizontal  - label next to input
-// #Form-fit         - fits in the screen 100%
-// #Form-styles      - for validation and warnings
-
-
+// - #
+// --------------------------------
+// Sets the width of the label on .form-horizontal;
+// 1- @labelwidth
+// 2- @labelSpan
+// 3- @inputPadding
+// 4- @inputSpacing
+//
+// ┌───── 1 ─────┬ 2 ┬───────── 100% ─────────┐
+//                   ┌────────────────────────┐ ┐
+//          Label    │ input                  │  3
+//                   └────────────────────────┘ ┤
+//                                               4
+//                                              ┘
+@labelWidth      : @elemWidth;   //1
+@labelSpan       : @elemSpan;    //2
+@inputPadding    : @elemPadding; //3
+@inputPaddingY   : @elemPaddingY; //3
+@inputPaddingX   : @elemPaddingX; //3
+@inputSpacing    : @elemSpacing; //4
+@inputBorder     : @elemBorder;
+@inputRadius     : @elemRadius;
+//@inputRadius     : 10px;
 
 // #Default
 // ======================================================================================================
 
 .form {
-
-    margin-bottom: @inputSpacing;
-
-    input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):not([type=hidden]):not([type="reset"]):not([type="image"]), // #1
-    button,
-    select,
-    textarea{
-            font-family: inherit;
-            font-size: 100%;
-            .box-model(border-box);
-    }
-
-    .input ,
-    fieldset {
+    .form-group{
+        display:flex;
+        flex-flow: column;
+        flex: 1 1 100%;
         margin-bottom: @inputSpacing;
     }
+    .form-label{
+        padding: @inputPaddingY 0;
+        //padding-top: @inputSpacing;
+        //margin-bottom: @inputSpacing;
+    }
+    label,
+    legend{
+        max-width: 100%;
+    }
+    .input-append{
+        display: flex;
+        flex-basis: 100%;
+        > *,
+        > .form-control{
+            border-radius: 0;
+        }
+        > *:first-child{
+            border-top-left-radius: @inputRadius;
+            border-bottom-left-radius: @inputRadius;
+        }
+        > *:last-child{
+            border-top-right-radius: @inputRadius;
+            border-bottom-right-radius: @inputRadius;
+        }
+        .input-add-on{
+            flex: 1;
+        }
+    }
+
+    .form-control{
+        //&:extend(.input-text);
+        //.box-model(border-box);
 
 
-    input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):not([type=hidden]):not([type="reset"]):not([type="image"]), // #1
-    select,
-    textarea{
-        &:extend(.text-inputs);
+        //display:flex;
         background: #fff;
-
         border: 1px solid #B7B7B7;
-        border-width: @inputBorder;
-        border-color: rgba(0, 0, 0, .25)
-                      rgba(0, 0, 0, .1)
-                      rgba(0, 0, 0, .1);
 
+        border-width: @inputBorder;
+        border-color: rgba(0, 0, 0, .1);
         border-radius: @inputRadius;
 
-        padding: @inputPadding;
+        padding: @inputPaddingY @inputPaddingX;
         margin: 0;
 
         vertical-align: middle;
-
         width: 100%;
+
+
         /*&:invalid{
             border-color: @brandDanger;
             box-shadow: 0 0 5px fade(@brandDanger,50%);
@@ -65,189 +96,49 @@
             box-shadow: 0 0 5px fade(@brandAction,50%);
         }
     }
-
-    label { display: block; }
-
-    .input label,
-    legend {
-        font-weight: bold;
-        padding-top: @inputSpacing;
-        margin-bottom: @inputSpacing;
-    }
-
-
-    fieldset{
-
-        label,
-        &.input label{
-            font-weight: normal;
-            width: auto;
-            display: block;
-            text-align: left;
-            padding: 0;
-            margin: 0;
-        }
-
-        &.input label{
-            margin-bottom: @inputSpacing;
-        }
-
-    }
-
-    .input-append{
-        position: relative;
-        display: table !important;
-        > * {
-            display: table-cell !important;
-            margin: 0;
-            border-radius: 0 !important;
-            vertical-align: baseline !important;
-        }
-        :first-child{
-            border-top-left-radius: @inputRadius !important;
-            border-bottom-left-radius: @inputRadius !important;
-        }
-        :last-child{
-            border-top-right-radius: @inputRadius !important;
-            border-bottom-right-radius: @inputRadius !important;
-        }
-        .add-on{
-            width: 1%;
-            &.btn{
-                //padding: 0 5px;
-                vertical-align: middle;
-            }
-        }
-        .error-message{
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 100%;
-            margin-top: -1px;
-        }
-    }
-
-
-    &-overflow{
-        .input label,
-        legend{
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-    }
 }
-// #Init
-@media (min-width: @screenSmallDevice){
 
+
+// #Init
+@media (min-width: @screen-sm){
     // #Form-horizontal
     // ======================================================================================================
     .form{
-        .input{
-            width: 100%;
-        }
 
-        input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):not([type=hidden]):not([type="reset"]):not([type="image"]),  // #1
-        select,
-        textarea{
-            width: auto;
-        }
-
-        //&-fit,
-        //&-horizontal{
-        //  .input{
-        //      width: 100%;
-        //  }
-        //}
         &-horizontal {
-            .input ,
-            fieldset {
-                display: table;
-                //table-layout: fixed;
+            .form-group{
+                flex-flow: row;
+            }
+            fieldset.form-group{
+                position: relative;
+                margin-left: @labelWidth;
+                //padding-top: @inputPaddingY;
                 margin-bottom: @inputSpacing;
+                flex-flow: column;
             }
-
-            .input > * {
-                display: table-cell;
-                vertical-align: top;
+            .form-group legend{
+                position: absolute;
+                left: -@labelWidth;
+                top: -@inputPaddingY;
             }
-
-            .input label,
-            legend{
-                width: @labelWidth;
+            .form-label{
+                //order: 1;
+                min-width: @labelWidth;
                 max-width: @labelWidth;
                 padding-right: @labelSpan;
-                //white-space: nowrap;
-                //text-overflow:ellipsis;
-                overflow: hidden;
-                text-align: right;
+                //text-align: right;
             }
-
-            fieldset,
-            .submit,
-            .input-align{
-                margin-left: @labelWidth + @labelSpan;
+            .form-control{
+                //order: 2;
+                flex: 1 1 auto;
             }
-
-            fieldset { position: relative; }
-
-            legend {
-                position: absolute;
-                margin-left: -(@labelWidth + @labelSpan);
-                padding-top: 0;
-            }
-        }
-    }
-
-
-    // #Form-fit
-    // ======================================================================================================
-
-    .form  ,
-    //.form-fit  ,
-    .form-horizontal  ,
-    .input-fit {
-        input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):not([type=hidden]):not([type="reset"]):not([type="image"]),
-        select,
-        textarea {
-           width: 100%;
-        }
-        textarea {
-           resize:vertical
         }
     }
 }
 
-// #1 - Aims for all these inputs
-// ----------------------------------- //
-// [type="color"]
-// [type="date"]
-// [type="datetime"]
-// [type="datetime-local"]
-// [type="email"]
-// [type="file"]
-// [type="image"]
-// [type="month"]
-// [type="number"]
-// [type="password"]
-// [type="range"]
-// [type="min"]
-// [type="max"]
-// [type="value"]
-// [type="step"]
-// [type="reset"]
-// [type="search8"]
-// [type="tel"]
-// [type="text"]
-// [type="time"]
-// [type="url"]
-// [type="week"]
-
-
-// #Form-styles
-// ======================================================================================================
 
 .form{
-     input{
+    input{
         &.error,
         &.danger  { border-color: @inputDangerBorder  !important; }
         &.success { border-color: @inputSuccessBorder !important; }

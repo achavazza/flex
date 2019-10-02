@@ -1,4 +1,4 @@
-// main: ../qs.less
+// main: ../fx.less
 
 // Table of Contents
 // ======================================================================================================
@@ -143,7 +143,7 @@
 }*/
 
 .output(@mixin){
-    .setup when (@mixin = setup){
+    .setup() when (@mixin = setup){
         [class*="col-"]{
             box-sizing: border-box;
             flex: 0 0 auto;
@@ -229,15 +229,15 @@
 
 .gradient(@start: #EEE, @stop: #FFF, @repeat: repeat-x) {
     background-color: @start;
-    background-image: -webkit-linear-gradient(top, @start 0%, @stop 100%);
-    background-image: -moz-linear-gradient(center bottom, @start 0%, @stop 100%);
+    //background-image: -webkit-linear-gradient(top, @start 0%, @stop 100%);
+    //background-image: -moz-linear-gradient(center bottom, @start 0%, @stop 100%);
     background-image: linear-gradient(to bottom, @start 0%, @stop 100%);
     background-repeat: @repeat;
 }
 .gradient-h(@start: #EEE, @stop: #FFF, @repeat: repeat-x) {
     background-color: @start; /* Old browsers */
-    background-image: -webkit-linear-gradient(left, @start 0%,@stop 100%);
-    background-image: -moz-linear-gradient(left, @start 0%, @stop 100%);
+    //background-image: -webkit-linear-gradient(left, @start 0%,@stop 100%);
+    //background-image: -moz-linear-gradient(left, @start 0%, @stop 100%);
     background-image: linear-gradient(to right, @start 0%,@stop 100%);
     background-repeat: @repeat;
 }
@@ -246,8 +246,8 @@
 // --------------------------------
 
 .box-model(@model: border-box){
-    -webkit-box-sizing: @model;
-    -moz-box-sizing: @model;
+    //-webkit-box-sizing: @model;
+    //-moz-box-sizing: @model;
     box-sizing: @model;
 }
 
@@ -255,8 +255,8 @@
 // --------------------------------
 
 .transition(@prop:all, @duration:0s, @easing:linear, @delay:0s){
-    -webkit-transition: @prop @duration @easing @delay;
-    -moz-transition: @prop @duration @easing @delay;
+    //-webkit-transition: @prop @duration @easing @delay;
+    //-moz-transition: @prop @duration @easing @delay;
     transition: @prop @duration @easing @delay;
 }
 
@@ -264,9 +264,9 @@
 // --------------------------------
 
 .user-select(@type: none){
-    -webkit-user-drag:   @type;
-    -webkit-user-select: @type;
-    -moz-user-select: @type;
+    //-webkit-user-drag:   @type;
+    //-webkit-user-select: @type;
+    //-moz-user-select: @type;
     user-select: @type;
 }
 
