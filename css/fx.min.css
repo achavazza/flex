@@ -1684,22 +1684,28 @@ ol.list li li li {
   }
   .form-horizontal fieldset.form-group {
     position: relative;
-    margin-left: 9em;
+    margin-left: 16.66666667%;
     margin-bottom: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
     flex-flow: column;
   }
   .form-horizontal .form-group legend {
     position: absolute;
-    left: -9em;
+    left: -16.66666667%;
     top: -0.5em;
   }
   .form-horizontal .form-label {
-    min-width: 9em;
-    max-width: 9em;
+    min-width: 16.66666667%;
+    max-width: 16.66666667%;
     padding-right: 1em;
+    text-align: right;
   }
   .form-horizontal .form-control {
     flex: 1 1 auto;
+  }
+  .form-horizontal .form-submit {
+    margin-left: 16.66666667%;
   }
 }
 .form input.error,

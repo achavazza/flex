@@ -14,7 +14,8 @@
 //                   └────────────────────────┘ ┤
 //                                               4
 //                                              ┘
-@labelWidth      : @elemWidth;   //1
+@labelWidth      : 100% * (2 / 12);
+//@labelWidth      : @elemWidth;   //1
 @labelSpan       : @elemSpan;    //2
 @inputPadding    : @elemPadding; //3
 @inputPaddingY   : @elemPaddingY; //3
@@ -114,6 +115,8 @@
                 margin-left: @labelWidth;
                 //padding-top: @inputPaddingY;
                 margin-bottom: @inputSpacing;
+                padding-left:@inputPaddingX;
+                padding-right:@inputPaddingX;
                 flex-flow: column;
             }
             .form-group legend{
@@ -126,11 +129,14 @@
                 min-width: @labelWidth;
                 max-width: @labelWidth;
                 padding-right: @labelSpan;
-                //text-align: right;
+                text-align: right;
             }
             .form-control{
                 //order: 2;
                 flex: 1 1 auto;
+            }
+            .form-submit{
+                margin-left: @labelWidth;
             }
         }
     }
