@@ -70,29 +70,52 @@
     }
 }
 */
+.__col(@i:1, @t:12){
+    max-width: 100% * (@i / @t);
+    flex-basis: 100% * (@i / @t);
+}
+.__prop(@i:1, @t:12, @property){
+    @{property}: 100% * (@i / @t);
+}
 .__generateDef (@t, @i: 1) when (@i =< @t) {
-    .col-@{i}{
-        max-width: 100% * (@i / @t);
-        flex-basis: 100% * (@i / @t);
+    .row .col-@{i}{
+        .__col(@i, @t);
+        //max-width: 100% * (@i / @t);
+        //flex-basis: 100% * (@i / @t);
     }
     .__generateDef(@t, (@i + 1));
 }
 
 .__generateDisplay (@display){
-    .col-@{display}{
+    .row .col-@{display}{
         flex-grow: 1;
         flex-basis: 0;
         max-width: 100%;
     }
 }
 .__generateRes (@t, @i: 1, @display) when (@i =< @t) {
-    .col-@{display}-@{i}{
-        max-width: 100% * (@i / @t);
-        flex-basis: 100% * (@i / @t);
+    .row .col-@{display}-@{i}{
+         .__col(@i, @t);
+        //max-width: 100% * (@i / @t) !important;
+        //flex-basis: 100% * (@i / @t)  !important;
     }
     .__generateRes(@t, (@i + 1), @display);
 }
-.__constructorProp (@t, @prop, @property){
+.__generateProp (@t, @i:1, @prop, @property) when (@i =< @t) {
+    .@{prop}-@{i}[class*="col-"] {
+        .__prop(@i, @t, @property);
+        //@{property}: 100% * (@i / @t);
+    }
+    .__generateProp (@t, (@i + 1), @prop, @property);
+}
+.__generatePropRes (@t, @i:1, @prop, @property, @display) when (@i =< @t) {
+    .@{prop}-@{display}-@{i}[class*="col-"] {
+        .__prop(@i, @t, @property);
+        //@{property}: 100% * (@i / @t);
+    }
+    .__generatePropRes (@t, (@i + 1), @prop, @property, @display);
+}
+/*.__constructorProp (@t, @prop, @property){
     @i: @t;
     .for(@t); .-each(@i){
         .@{prop}-@{i}[class*="col-"] {
@@ -108,25 +131,27 @@
             @{property}: 100% * (@i / @t)
         }
     }
-}
+}*/
 
 
-.__generateGrid(@number) {
+/*.__generateGrid(@number) {
     .__constructor     (@number);
+    .__constructorProp (@number, offset, margin-left );
     //.__constructorProp (@number, prefix, margin-left );
     //.__constructorProp (@number, suffix, margin-right); //deprecated
     //.__constructorProp (@number, push  , left        );
     //.__constructorProp (@number, pull  , right       );
-}
+}*/
 
-.__generateGridResponsive(@number, @device) {
+/*.__generateGridResponsive(@number, @device) {
     .__constructorDisplay (@device);
     .__constructorRes     (@number, @device);
+    .__constructorProp    (@number, offset, margin-left, @device );
     //.__constructorProp (@number, prefix, margin-left , @device);
     //.__constructorProp (@number, suffix, margin-right, @device); //deprecated
     //.__constructorProp (@number, push  , left        , @device);
     //.__constructorProp (@number, pull  , right       , @device);
-}
+}*/
 
 /*.__generateSetupSnap(@grids) {
     .for(@grids);
@@ -146,7 +171,8 @@
     .setup() when (@mixin = setup){
         [class*="col-"]{
             box-sizing: border-box;
-            flex: 0 0 auto;
+            flex: 0 0 100%;
+            width: 100%;
             padding-left:  @gutter;
             padding-right: @gutter;
         }

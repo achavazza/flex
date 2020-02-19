@@ -14,12 +14,14 @@
 //                   └────────────────────────┘ ┤
 //                                               4
 //                                              ┘
+@colNum: 3;
+@colTotal: 12;
 @labelWidth      : 100% * (2 / 12);
 //@labelWidth      : @elemWidth;   //1
 @labelSpan       : @elemSpan;    //2
 @inputPadding    : @elemPadding; //3
-@inputPaddingY   : @elemPaddingY; //3
 @inputPaddingX   : @elemPaddingX; //3
+@inputPaddingY   : @elemPaddingY; //3
 @inputSpacing    : @elemSpacing; //4
 @inputBorder     : @elemBorder;
 @inputRadius     : @elemRadius;
@@ -27,28 +29,57 @@
 
 // #Default
 // ======================================================================================================
+.form-label,
+.form-control,
+.form-container{
+    //box-sizing: border-box;
+    //display:flex;
+    //flex: 0 1 auto;
+    //flex-direction: column;
+    //flex-wrap: wrap;
+    //padding-left:  @gutter;
+    //padding-right: @gutter;
 
+    //flex-basis: 100%;
+    //text-algin: right;
+}
 .form {
     .form-group{
-        display:flex;
-        flex-flow: column;
-        flex: 1 1 100%;
+        //box-sizing: border-box;
+        //display:flex;
+        //flex-flow: column;
+        //flex: 1 1 100%;
+
+        //flex: 0 1 auto;
+        //flex-direction: column;
+        //flex-wrap: wrap;
+        //margin-left:  -@gutter;
+        //margin-right: -@gutter;
+
         margin-bottom: @inputSpacing;
     }
     .form-label{
-        padding: @inputPaddingY 0;
+        display:flex;
+        padding-top: @inputPaddingY;
+        padding-bottom: @inputPaddingY;
         //padding-top: @inputSpacing;
         //margin-bottom: @inputSpacing;
+        flex: 1 1 100%;
+        text-align: right;
     }
-    label,
-    legend{
-        max-width: 100%;
-    }
-    .input-append{
+
+    //label,
+    //legend{
+    //    max-width: 100%;
+    //}
+    .input-group{
         display: flex;
-        flex-basis: 100%;
+        //flex-basis: 100%;
+        flex: 1 1 100%;
         > *,
         > .form-control{
+            flex: 1 1 100%;
+            //flex-basis: 100%;
             border-radius: 0;
         }
         > *:first-child{
@@ -59,7 +90,7 @@
             border-top-right-radius: @inputRadius;
             border-bottom-right-radius: @inputRadius;
         }
-        .input-add-on{
+        &-append{
             flex: 1;
         }
     }
@@ -70,11 +101,12 @@
 
 
         //display:flex;
-        background: #fff;
-        border: 1px solid #B7B7B7;
+        background: @bgBody;
+        border: 1px solid @inputDefault;
 
+        box-sizing: border-box;
         border-width: @inputBorder;
-        border-color: rgba(0, 0, 0, .1);
+        //border-color: rgba(0, 0, 0, .1);
         border-radius: @inputRadius;
 
         padding: @inputPaddingY @inputPaddingX;
@@ -98,46 +130,79 @@
         }
     }
 }
+/*.form-group{
+    &:extend(.row all);
+}
 
+// FIX
+fieldset.form-group > .row {
+    margin: 0;
+}*/
 
 // #Init
 @media (min-width: @screen-sm){
-    // #Form-horizontal
-    // ======================================================================================================
-    .form{
 
-        &-horizontal {
-            .form-group{
-                flex-flow: row;
-            }
-            fieldset.form-group{
-                position: relative;
-                margin-left: @labelWidth;
-                //padding-top: @inputPaddingY;
-                margin-bottom: @inputSpacing;
-                padding-left:@inputPaddingX;
-                padding-right:@inputPaddingX;
-                flex-flow: column;
-            }
-            .form-group legend{
-                position: absolute;
-                left: -@labelWidth;
-                top: -@inputPaddingY;
-            }
-            .form-label{
-                //order: 1;
-                min-width: @labelWidth;
-                max-width: @labelWidth;
-                padding-right: @labelSpan;
-                text-align: right;
-            }
+    .form-horizontal {
+        /*.form-label{
+            padding-left: @gutter;
+            padding-right: @gutter;
+            text-align: right;
+            .__col(2,12);
+        }*/
+        .form-container{
+            padding: @inputPaddingX @inputPaddingY;
+        }
+        /*.input-group,
+        .form-control,
+        .form-container{
+            .__col(10,12);
+        }*/
+
+        .form-group{
+            //flex-flow: row;
+        }
+        fieldset.form-group{
+            //position: relative;
+            //margin-left: @labelWidth;
+            //margin-bottom: @inputSpacing;
+            //padding-left:@inputPaddingX;
+            //padding-right:@inputPaddingX;
+            //flex-flow: column;
+        }
+        .form-group legend{
+            //position: absolute;
+            //left: -@labelWidth;
+            //top: -@inputPaddingY;
+            //width: 100% * (@colNum / @colTotal);
+            //flex-grow: 1;
+            //flex-shrink: 1;
+        }
+        /*.input-group{
             .form-control{
-                //order: 2;
-                flex: 1 1 auto;
+                max-width: 100%;
+                flex-basis: 100%;
             }
-            .form-submit{
-                margin-left: @labelWidth;
-            }
+        }*/
+        .input-group,
+        .form-container,
+        .form-control{
+            //order: 2;
+            //.__col((@colTotal - @colNum),@colTotal);
+        }
+
+        .form-label{
+            //order: 1;
+            //.__col(@colNum, @colTotal);
+            //min-width: @labelWidth;
+            //max-width: @labelWidth;
+            //padding-right: @gutter;
+            //padding-right: @labelSpan;
+            //text-align: right;
+        }
+
+        //.form-container{
+        .form-submit{
+            //margin-left: 100% * (@colNum / @colTotal);
         }
     }
 }

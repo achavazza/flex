@@ -21,6 +21,7 @@
 //.__generateRes     (12,1, xs);
 .__generateSetup(setup);
 .__generateDef (12);
+.__generateProp (12, 1, offset, margin-left);
 .__generateDisplay (xs);
 .__tools(xs);
 
@@ -28,11 +29,16 @@
 .row {
     box-sizing: border-box;
     display: flex;
-    flex: 0 1 auto;
+    flex: 0 1 100%;
+    //flex: 0 0 auto;
+    //flex: 0 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
     margin-left:  -@gutter;
     margin-right: -@gutter;
+
+    //max-width: 100%;
+    //flex-basis: 100%;
 }
 .row.reverse {
     flex-direction: row-reverse;
@@ -68,7 +74,8 @@
         }
         //.__generateGridResponsive(12, sm);
         .__generateDisplay (sm);
-        .__generateRes     (12,1, sm);
+        .__generateRes     (12, 1, sm);
+        .__generatePropRes (12, 1, offset, margin-left, sm);
         .__tools(sm);
 
         // #Portrait Visible / Invisible - switch on off elements
@@ -106,7 +113,8 @@
 
         //.__generateGridResponsive(12, md);
         .__generateDisplay (md);
-        .__generateRes     (12,1, md);
+        .__generateRes     (12, 1, md);
+        .__generatePropRes (12, 1, offset, margin-left, md);
         .__tools(md);
 
         // #Landscape Visible / Invisible - switch on off elements
@@ -141,7 +149,8 @@
 
         //.__generateGridResponsive(12, lg);
         .__generateDisplay (lg);
-        .__generateRes     (12,1, lg);
+        .__generateRes     (12, 1, lg);
+        .__generatePropRes (12, 1, offset, margin-left, lg);
         .__tools(lg);
 
         // #Desktop Visible / Invisible - switch on off elements

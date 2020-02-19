@@ -23,6 +23,7 @@
 @colorPurple    : #8e44ad; //violet
 @colorBlack     : #2c3e50; //black
 @colorGrey      : #ecf0f1; //grey
+@colorDarkGrey  : darken(#ecf0f1, 10%); //darkgrey
 
 @brandAction    : @colorBlue; //blue
 @brandDefault   : @colorGrey; //grey
@@ -34,11 +35,12 @@
 @brandInverse   : @colorBlack; //black
 
 //Inputs & errors
+@inputDefault       : @colorDarkGrey; //grey
 @inputDangerBorder  : @brandDanger;  //red
 @inputWarningBorder : @brandWarning; //yellow
 @inputSuccessBorder : @brandInfo;    //green
 @inputInfoBorder    : @brandSuccess; //cyan
-@inputActionBorder  : @brandAction; //blue
+@inputActionBorder  : @brandAction;  //blue
 @inputAltBorder     : @brandAlt;     //violet
 @inputInverseBorder : @brandInverse; //black
 
