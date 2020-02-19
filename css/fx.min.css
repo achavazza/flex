@@ -270,6 +270,7 @@ button,
 input {
   /* 1 */
   overflow: visible;
+  line-height: normal;
 }
 /**
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
@@ -1450,12 +1451,12 @@ fieldset {
   *font-size: 90%;
   *overflow: visible;
   padding: 0.5em 1em;
-  border: 1px solid #B7B7B7;
+  border: 1px solid #b9c7d3;
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   border-radius: 2px;
-  background-color: #fbfcfc;
-  background-image: linear-gradient(to bottom, #fbfcfc 0%, #dde4e6 100%);
+  background-color: #d6dee5;
+  background-image: linear-gradient(to bottom, #d6dee5 0%, #bcc9d5 100%);
   background-repeat: repeat-x;
   color: #333;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -1488,72 +1489,72 @@ fieldset {
   width: 100%;
 }
 .btn-primary {
-  background-color: #4aa3df;
-  background-image: linear-gradient(to bottom, #4aa3df 0%, #258cd1 100%);
+  background-color: #1489ff;
+  background-image: linear-gradient(to bottom, #1489ff 0%, #0075eb 100%);
   background-repeat: repeat-x;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(51, 51, 51, 0.2);
 }
 .btn-secondary {
-  background-color: #9b50ba;
-  background-image: linear-gradient(to bottom, #9b50ba 0%, #7f3d9b 100%);
+  background-color: #9a14ff;
+  background-image: linear-gradient(to bottom, #9a14ff 0%, #8500eb 100%);
   background-repeat: repeat-x;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(51, 51, 51, 0.2);
 }
 .btn-accent {
-  background-color: #1dd2af;
-  background-image: linear-gradient(to bottom, #1dd2af 0%, #17a689 100%);
+  background-color: #32de96;
+  background-image: linear-gradient(to bottom, #32de96 0%, #20c682 100%);
   background-repeat: repeat-x;
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(51, 51, 51, 0.2);
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 .btn-error,
 .btn-danger {
-  background-color: #d14233;
-  background-image: linear-gradient(to bottom, #d14233 0%, #ab3326 100%);
+  background-color: #ff1461;
+  background-image: linear-gradient(to bottom, #ff1461 0%, #eb004c 100%);
   background-repeat: repeat-x;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(51, 51, 51, 0.2);
 }
 .btn-warning {
-  background-color: #f4a62a;
-  background-image: linear-gradient(to bottom, #f4a62a 0%, #e08e0b 100%);
+  background-color: #ffc114;
+  background-image: linear-gradient(to bottom, #ffc114 0%, #ebad00 100%);
   background-repeat: repeat-x;
   color: #333;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 .btn-info {
-  background-color: #1dd2af;
-  background-image: linear-gradient(to bottom, #1dd2af 0%, #17a689 100%);
+  background-color: #32de96;
+  background-image: linear-gradient(to bottom, #32de96 0%, #20c682 100%);
   background-repeat: repeat-x;
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(51, 51, 51, 0.2);
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 .btn-success {
-  background-color: #2cc36b;
-  background-image: linear-gradient(to bottom, #2cc36b 0%, #229955 100%);
+  background-color: #19ced5;
+  background-image: linear-gradient(to bottom, #19ced5 0%, #15aab1 100%);
   background-repeat: repeat-x;
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(51, 51, 51, 0.2);
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 .btn-action {
-  background-color: #4aa3df;
-  background-image: linear-gradient(to bottom, #4aa3df 0%, #258cd1 100%);
+  background-color: #1489ff;
+  background-image: linear-gradient(to bottom, #1489ff 0%, #0075eb 100%);
   background-repeat: repeat-x;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(51, 51, 51, 0.2);
 }
 .btn-alt {
-  background-color: #9b50ba;
-  background-image: linear-gradient(to bottom, #9b50ba 0%, #7f3d9b 100%);
+  background-color: #9a14ff;
+  background-image: linear-gradient(to bottom, #9a14ff 0%, #8500eb 100%);
   background-repeat: repeat-x;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(51, 51, 51, 0.2);
 }
 .btn-inverse {
-  background-color: #354b60;
-  background-image: linear-gradient(to bottom, #354b60 0%, #233140 100%);
+  background-color: #304457;
+  background-image: linear-gradient(to bottom, #304457 0%, #22303d 100%);
   background-repeat: repeat-x;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(51, 51, 51, 0.2);
@@ -1667,14 +1668,14 @@ ol.list li li li {
   border-bottom: 1px solid #cccccc;
 }
 .table th {
-  background: #ecf0f1;
+  background: #c9d4dd;
 }
 .table-bordered th,
 .table-bordered td {
   border: 1px solid #cccccc;
 }
 .table-stripped tr:nth-child(odd) td {
-  background: #f0f3f4;
+  background: #d4dce4;
 }
 .label {
   display: inline-block;
@@ -1694,7 +1695,7 @@ ol.list li li li {
   border: 1px solid #B7B7B7;
   border-color: rgba(0, 0, 0, 0.1);
   border-radius: 3px;
-  background-color: #ecf0f1;
+  background-color: #c9d4dd;
   color: #333;
 }
 .label-hidden {
@@ -1704,48 +1705,48 @@ ol.list li li li {
   width: 100%;
 }
 .label-default {
-  background-color: #ecf0f1;
+  background-color: #c9d4dd;
   color: #333;
 }
 .label-primary {
-  background-color: #9acced;
+  background-color: #80bfff;
   color: #fff;
 }
 .label-secondary {
-  background-color: #c7a2d6;
+  background-color: #c880ff;
   color: #fff;
 }
 .label-accent {
-  background-color: #8ddece;
+  background-color: #91ecc6;
   color: #333;
 }
 .label-error,
 .label-danger {
-  background-color: #e09c95;
+  background-color: #ff80a9;
   color: #333;
 }
 .label-warning {
-  background-color: #f9ce89;
+  background-color: #ffde80;
   color: #333;
 }
 .label-info {
-  background-color: #8ddece;
+  background-color: #8bdee1;
   color: #333;
 }
 .label-success {
-  background-color: #93d7b0;
+  background-color: #91ecc6;
   color: #333;
 }
 .label-action {
-  background-color: #9acced;
+  background-color: #80bfff;
   color: #333;
 }
 .label-alt {
-  background-color: #c7a2d6;
+  background-color: #c880ff;
   color: #333;
 }
 .label-inverse {
-  background-color: #969fa8;
+  background-color: #949da5;
   color: #333;
 }
 .label-hollow {
@@ -1774,55 +1775,55 @@ ol.list li li li {
   border-color: rgba(0, 0, 0, 0.1);
   font-weight: bold;
   border-radius: 2em;
-  background-color: #ecf0f1;
+  background-color: #c9d4dd;
   color: #333;
 }
 .badge:empty {
   display: none;
 }
 .badge-default {
-  background-color: #ecf0f1;
+  background-color: #c9d4dd;
   color: #333;
 }
 .badge-primary {
-  background-color: #9acced;
+  background-color: #80bfff;
   color: #fff;
 }
 .badge-secondary {
-  background-color: #c7a2d6;
+  background-color: #c880ff;
   color: #fff;
 }
 .badge-accent {
-  background-color: #8ddece;
+  background-color: #91ecc6;
   color: #333;
 }
 .badge-error,
 .badge-danger {
-  background-color: #e09c95;
+  background-color: #ff80a9;
   color: #fff;
 }
 .badge-warning {
-  background-color: #f9ce89;
+  background-color: #ffde80;
   color: #333;
 }
 .badge-info {
-  background-color: #8ddece;
+  background-color: #8bdee1;
   color: #333;
 }
 .badge-success {
-  background-color: #93d7b0;
-  color: #fff;
+  background-color: #91ecc6;
+  color: #333;
 }
 .badge-action {
-  background-color: #9acced;
+  background-color: #80bfff;
   color: #fff;
 }
 .badge-alt {
-  background-color: #c7a2d6;
+  background-color: #c880ff;
   color: #fff;
 }
 .badge-inverse {
-  background-color: #969fa8;
+  background-color: #949da5;
   color: #fff;
 }
 .badge-hollow {
@@ -1837,7 +1838,7 @@ ol.list li li li {
   padding: 0.5em;
   display: block;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  background-color: #ecf0f1;
+  background-color: #c9d4dd;
   color: #333;
   margin-bottom: 0.5em;
 }
@@ -1845,48 +1846,48 @@ ol.list li li li {
   display: none;
 }
 .message-default {
-  background-color: #ecf0f1;
+  background-color: #c9d4dd;
   color: #333;
 }
 .message-primary {
-  background-color: #85c1e9;
+  background-color: #66b2ff;
   color: #333;
 }
 .message-secondary {
-  background-color: #bb8fce;
+  background-color: #bd66ff;
   color: #fff;
 }
 .message-accent {
-  background-color: #76d7c4;
+  background-color: #7be8bb;
   color: #333;
 }
 .message-error,
 .message-danger {
-  background-color: #d98880;
+  background-color: #ff6698;
   color: #fff;
 }
 .message-warning {
-  background-color: #f8c471;
+  background-color: #ffd766;
   color: #333;
 }
 .message-info {
-  background-color: #76d7c4;
+  background-color: #74d7db;
   color: #333;
 }
 .message-success {
-  background-color: #7dcea0;
+  background-color: #7be8bb;
   color: #333;
 }
 .message-action {
-  background-color: #85c1e9;
+  background-color: #66b2ff;
   color: #333;
 }
 .message-alt {
-  background-color: #bb8fce;
+  background-color: #bd66ff;
   color: #fff;
 }
 .message-inverse {
-  background-color: #808b96;
+  background-color: #7f8992;
   color: #fff;
 }
 .form .form-group {
@@ -1921,7 +1922,7 @@ ol.list li li li {
 }
 .form .form-control {
   background: #fff;
-  border: 1px solid #cfd9db;
+  border: 1px solid #93a8bb;
   box-sizing: border-box;
   border-width: 1px;
   border-radius: 2px;
@@ -1939,17 +1940,18 @@ ol.list li li li {
         }*/
 }
 .form .form-control:focus {
-  border-color: #3498db;
-  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+  border-color: #007FFF;
+  box-shadow: 0 0 5px rgba(0, 127, 255, 0.5);
 }
-/*.form-group{
+/*
+.form-group{
     &:extend(.row all);
 }
-
 // FIX
 fieldset.form-group > .row {
     margin: 0;
-}*/
+}
+*/
 @media (min-width: 45em) {
   .form-horizontal {
     /*.form-label{
@@ -1976,13 +1978,13 @@ fieldset.form-group > .row {
 }
 .form input.error,
 .form input.danger {
-  border-color: #c0392b !important;
+  border-color: #FF0053 !important;
 }
 .form input.success {
-  border-color: #1abc9c !important;
+  border-color: #17BCC3 !important;
 }
 .form input.warning {
-  border-color: #f39c12 !important;
+  border-color: #FFBC00 !important;
 }
 .box {
   padding: 10px;
@@ -2162,14 +2164,14 @@ ol.list li li li {
   border-bottom: 1px solid #cccccc;
 }
 .table th {
-  background: #ecf0f1;
+  background: #c9d4dd;
 }
 .table-bordered th,
 .table-bordered td {
   border: 1px solid #cccccc;
 }
 .table-stripped tr:nth-child(odd) td {
-  background: #f0f3f4;
+  background: #d4dce4;
 }
 /* Your project
  * Created By:
