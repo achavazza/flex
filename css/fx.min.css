@@ -762,8 +762,8 @@ fieldset {
 }
 .grid {
   max-width: auto;
-  margin-left: 2em;
-  margin-right: 2em;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
 }
 .col-xs,
 .col-sm,
@@ -818,8 +818,8 @@ fieldset {
   box-sizing: border-box;
   flex: 0 0 100%;
   width: 100%;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
 }
 .row .col-1 {
   max-width: 8.33333333%;
@@ -949,8 +949,8 @@ fieldset {
   flex: 0 1 100%;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: -1em;
-  margin-right: -1em;
+  margin-left: -0.75em;
+  margin-right: -0.75em;
 }
 .row.reverse {
   flex-direction: row-reverse;
